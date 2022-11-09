@@ -302,12 +302,17 @@ body {
     border-radius: 4px;
     outline: transparent;
     padding-left: 42px;
-    transform: border-color 250ms var(--cubic) ;
+    transition-property: border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 }
 
 .modal-input:focus{
-    border-color: var(--accent-text-color);
+    border: 1px solid var(--accent-text-color);
+}
+.modal-pad-com{
+    margin-bottom: 20px;
 }
 
 .modal-input-icon{
@@ -320,23 +325,38 @@ body {
 .modal-input:focus + .modal-input-icon{
     fill: var(--accent-text-color);
 }
-
+.form-textaria{
+    margin-bottom: 20px;
+}
 .modal-comment{
     width: 100%;
     height: 120px;
     padding: 12px 16px;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 1.16;
     letter-spacing: 0.01em;
     resize: none;
+    transition-property: border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    color: rgba(117, 117, 117, 0.5);
+.modal-comment:focus {
+    border: 1px solid #2196F3;
 }
 .input-check{
     display: block;
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: var(--cubic);
 }
 
+.check{
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
 .check-text{
     display: flex;
     fill: transparent;
@@ -360,11 +380,10 @@ body {
     line-height: 1.71;
     margin-right: 5px;
     color: var(--accent-text-color);
-    align-items: center;
-    justify-content: center;
-}
-.modal-link::after{
-    text-decoration: line-through;
+    /* align-items: center;
+    justify-content: center; */
+    margin-left: 7px;
+    text-decoration: underline;
 }
 
 .check-icon{
@@ -391,6 +410,7 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     border-color: transparent;
+    transform: background-color 250ms var(--cubic);
 }
 
 .modal-button-text{
@@ -401,7 +421,6 @@ body {
     align-items: center;
     text-align: center;
     letter-spacing: 0.06em;
-    transform: background-color 250ms var(--cubic);
 
     color: var(--primary-white-color);
 }
@@ -786,7 +805,10 @@ body {
     border-radius: 4px;
     background-color: transparent;
     padding-left: 16px;
-
+    color: var(--primary-white-color);
+    transition-property: border, filter;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-input::placeholder{
